@@ -3,166 +3,192 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Acme Accounting • Stress-Free Tax & Bookkeeping</title>
+  <title>Devolder Accounting • Consulting & Tax Preparation</title>
 
-  <!-- Tailwind CSS via CDN – swap for a build pipeline later -->
+  <!-- Tailwind via CDN (swap for a build pipeline later) -->
   <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    /* brand palette */
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand:   { DEFAULT: '#3d2752' },   /* deep plum (text)   */
+            accent:  { DEFAULT: '#d6b66b' },   /* warm gold (accents)*/
+            paper:   { DEFAULT: '#f8f5ee' }    /* light parchment bg */
+          }
+        }
+      }
+    }
+  </script>
 
-  <!-- OPT-IN: preload hero for first paint -->
-  <link rel="preload" as="image" href="assets/hero.jpg" imagesrcset="
-        assets/hero@640.jpg 640w,
-        assets/hero@1024.jpg 1024w,
-        assets/hero@1600.jpg 1600w" imagesizes="100vw">
+  <!-- preload hero so largest paint is quick -->
+  <link rel="preload" as="image" href="assets/hero.jpg">
 
-  <!-- Favicons -->
+  <!-- favicon -->
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 </head>
-<body class="antialiased text-slate-800 bg-slate-50 [font-size:17px] leading-relaxed">
+<body class="antialiased bg-paper text-brand [font-size:17px] leading-relaxed">
 
-  <!-- NAV -->
-  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8">
-      <a href="#" class="text-xl font-semibold tracking-tight text-sky-600">Acme Accounting</a>
-      <ul class="hidden gap-8 text-sm font-medium text-slate-700 lg:flex">
-        <li><a href="#services" class="hover:text-sky-600">Services</a></li>
-        <li><a href="#about" class="hover:text-sky-600">About</a></li>
-        <li><a href="#contact" class="hover:text-sky-600">Contact</a></li>
-      </ul>
-      <a href="#contact"
-         class="hidden rounded-xl bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 lg:block">
-        Free Consultation
-      </a>
-    </nav>
-  </header>
+<!-- ========== NAV ========== -->
+<header class="sticky top-0 z-40 bg-paper/90 backdrop-blur shadow-sm">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
+    <span class="text-lg font-extrabold tracking-tight">Devolder&nbsp;Accounting</span>
 
-  <!-- HERO -->
-  <section class="relative isolate">
-    <img
-      src="assets/hero@1024.jpg"
-      srcset="assets/hero@640.jpg 640w, assets/hero@1024.jpg 1024w, assets/hero@1600.jpg 1600w"
-      sizes="100vw"
-      alt="Smiling accountant reviewing client finances"
-      width="1600" height="900"
-      class="absolute inset-0 h-full w-full object-cover"
-      loading="eager" />
-    <div class="relative mx-auto max-w-4xl px-6 py-32 text-center text-white">
-      <h1 class="mb-4 text-4xl font-extrabold sm:text-5xl lg:text-6xl drop-shadow-md">
-        Taxes Done Right—<wbr>Every Time
-      </h1>
-      <p class="mx-auto max-w-xl text-lg sm:text-xl">
-        Bookkeeping, payroll &amp; corporate returns handled by CPAs so you can focus on growing your business.
+    <ul class="hidden gap-8 font-medium lg:flex">
+      <li><a href="#services" class="hover:text-accent">Services</a></li>
+      <li><a href="#about"    class="hover:text-accent">About</a></li>
+      <li><a href="#contact"  class="hover:text-accent">Contact</a></li>
+    </ul>
+
+    <a href="#contact"
+       class="hidden rounded-xl bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand/90 lg:block">
+      Free Consultation
+    </a>
+  </nav>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="relative isolate">
+  <img
+    src="assets/hero.jpg"
+    alt="Syerra Devolder—professional accountant at work"
+    class="absolute inset-0 h-full w-full object-cover"
+    width="1600" height="900" loading="eager">
+  <div class="pointer-events-none absolute inset-0 bg-brand/60"></div>
+
+  <div class="relative mx-auto max-w-3xl px-6 py-32 text-center text-white">
+    <h1 class="mb-4 text-4xl font-extrabold sm:text-5xl md:text-6xl drop-shadow-lg">
+      Accounting&nbsp;&amp;&nbsp;Tax Preparation&nbsp;You&nbsp;Can&nbsp;Rely&nbsp;On
+    </h1>
+    <p class="mx-auto max-w-xl text-lg sm:text-xl">
+      Serving small businesses and individuals across Ontario—from returns to year-end audits.
+    </p>
+    <a href="#contact"
+       class="mt-8 inline-block rounded-xl bg-accent px-6 py-3 font-semibold text-brand shadow hover:bg-accent/90">
+      Book a Free Call →
+    </a>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section id="services" class="mx-auto max-w-7xl px-6 py-24">
+  <div class="mb-16 text-center">
+    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Specializing in</h2>
+  </div>
+
+  <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
+    <article>
+      <h3 class="text-lg font-semibold">Small-Business &amp; Personal Returns</h3>
+      <p class="mt-2 text-brand/80">Accurate T1&nbsp;&amp;&nbsp;T2 filings with year-round support.</p>
+    </article>
+    <article>
+      <h3 class="text-lg font-semibold">Tax Planning</h3>
+      <p class="mt-2 text-brand/80">Strategies to minimize liability and keep more in your pocket.</p>
+    </article>
+    <article>
+      <h3 class="text-lg font-semibold">Start-Up Process Reviews</h3>
+      <p class="mt-2 text-brand/80">Set solid accounting foundations from day one.</p>
+    </article>
+    <article>
+      <h3 class="text-lg font-semibold">Preliminary Year-End Audits</h3>
+      <p class="mt-2 text-brand/80">Catch issues early and breeze through CRA assessments.</p>
+    </article>
+    <article>
+      <h3 class="text-lg font-semibold">On-Call Accounting Consulting</h3>
+      <p class="mt-2 text-brand/80">Answers when you need them—without full-time overhead.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section id="about" class="bg-white">
+  <div class="mx-auto max-w-7xl grid gap-12 px-6 py-24 lg:grid-cols-2">
+    <picture>
+      <img src="assets/syerra.jpg"
+           alt="Portrait of Syerra Devolder"
+           width="1024" height="768"
+           class="rounded-3xl object-cover shadow-xl" loading="lazy">
+    </picture>
+
+    <article class="self-center">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Meet&nbsp;Syerra&nbsp;Devolder</h2>
+      <p class="mt-6 text-brand/80">
+        With a decade in public practice, Syerra has helped over 500 entrepreneurs
+        streamline their books, slash tax bills, and gain clarity on their finances.
       </p>
-      <a href="#contact"
-         class="mt-8 inline-block rounded-xl bg-white/90 px-6 py-3 text-base font-semibold text-sky-700 shadow hover:bg-white">
-        Book a 30-min Call →
-      </a>
-    </div>
-    <div class="pointer-events-none absolute inset-0 bg-sky-900/40"></div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="mx-auto max-w-7xl px-6 py-24">
-    <div class="mb-16 text-center">
-      <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">What we do best</h2>
-      <p class="mx-auto mt-4 max-w-2xl text-slate-600">
-        All plans include unlimited support — no surprise fees.
+      <p class="mt-4 text-brand/80">
+        When she isn’t immersed in ledgers, you’ll find her volunteering at local
+        small-business clinics or hosting QuickBooks workshops around Huron County.
       </p>
+    </article>
+  </div>
+</section>
+
+<!-- ========== CTA STRIP ========== -->
+<section class="relative isolate bg-brand text-white">
+  <div class="mx-auto max-w-7xl px-6 py-20 text-center">
+    <h2 class="text-3xl font-bold sm:text-4xl">Let’s simplify your books.</h2>
+    <p class="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+      Schedule a free 30-minute discovery call—no pressure, just clarity.
+    </p>
+    <a href="#contact"
+       class="mt-8 inline-block rounded-xl bg-accent px-8 py-4 font-semibold text-brand shadow hover:bg-accent/90">
+      Get Started →
+    </a>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact" class="mx-auto max-w-lg px-6 py-24">
+  <h2 class="mb-8 text-center text-3xl font-bold tracking-tight">Contact&nbsp;Syerra</h2>
+
+  <!-- Phone & email quick links -->
+  <div class="mb-8 flex flex-col items-center gap-6 text-lg font-medium">
+    <a href="tel:+12268812465" class="hover:text-accent">📞 226-881-2465</a>
+    <a href="mailto:dactp25@gmail.com" class="hover:text-accent">✉️ dactp25@gmail.com</a>
+  </div>
+
+  <!-- FormSubmit sends form contents directly to the email without server code -->
+  <form action="https://formsubmit.co/dactp25@gmail.com" method="POST" class="space-y-6">
+    <!-- honeypot -->
+    <input type="text" name="_honey" style="display:none">
+    <!-- disable captcha -->
+    <input type="hidden" name="_captcha" value="false">
+    <!-- redirect after success -->
+    <input type="hidden" name="_next" value="thanks.html">
+
+    <div>
+      <label for="name" class="block text-sm font-medium">Name</label>
+      <input id="name" name="name" type="text" required
+             class="mt-1 w-full rounded-md border border-brand/20 px-3 py-2 shadow-sm focus:border-accent focus:ring-accent">
     </div>
 
-    <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
-      <!-- Feature -->
-      <div class="flex flex-col items-start">
-        <img src="assets/icon-bookkeeping.svg" alt="" width="64" height="64" class="mb-4" loading="lazy">
-        <h3 class="text-xl font-semibold text-slate-800">Bookkeeping</h3>
-        <p class="mt-2 text-slate-600">Monthly reconciliations, AR/AP tracking, and management reports.</p>
-      </div>
-
-      <div class="flex flex-col items-start">
-        <img src="assets/icon-tax.svg" alt="" width="64" height="64" class="mb-4" loading="lazy">
-        <h3 class="text-xl font-semibold text-slate-800">Corporate &amp; Personal Tax</h3>
-        <p class="mt-2 text-slate-600">T2, T1 &amp; sales-tax filings prepared and e-filed by licensed CPAs.</p>
-      </div>
-
-      <div class="flex flex-col items-start">
-        <img src="assets/icon-payroll.svg" alt="" width="64" height="64" class="mb-4" loading="lazy">
-        <h3 class="text-xl font-semibold text-slate-800">Full-Cycle Payroll</h3>
-        <p class="mt-2 text-slate-600">Direct-deposit, ROEs and T4s handled weekly, bi-weekly or monthly.</p>
-      </div>
+    <div>
+      <label for="email" class="block text-sm font-medium">Email</label>
+      <input id="email" name="email" type="email" required
+             class="mt-1 w-full rounded-md border border-brand/20 px-3 py-2 shadow-sm focus:border-accent focus:ring-accent">
     </div>
-  </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="bg-white">
-    <div class="mx-auto max-w-7xl px-6 py-24 grid gap-12 lg:grid-cols-2">
-      <picture>
-        <img src="assets/team@640.jpg"
-             srcset="assets/team@640.jpg 640w, assets/team@1024.jpg 1024w"
-             sizes="(min-width:1024px) 50vw, 100vw"
-             alt="Acme Accounting team in the office"
-             width="1024" height="768"
-             class="rounded-3xl object-cover shadow-lg" loading="lazy">
-      </picture>
-      <article class="self-center">
-        <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Trusted by 500+ Canadian SMBs</h2>
-        <p class="mt-6 text-slate-600">
-          Headquartered in Toronto, our CPA-led firm has been guiding entrepreneurs for 15 years. We combine modern
-          cloud software (QuickBooks, Xero, Dext, Wagepoint) with human expertise, saving clients an average of 120
-          admin hours—and thousands in tax—every year.
-        </p>
-        <p class="mt-4 text-slate-600">
-          Whether you’re a solopreneur or scaling to Series A, we tailor processes around <em>your</em> workflow.
-        </p>
-      </article>
+    <div>
+      <label for="message" class="block text-sm font-medium">How can we help?</label>
+      <textarea id="message" name="message" rows="4" required
+                class="mt-1 w-full rounded-md border border-brand/20 px-3 py-2 shadow-sm focus:border-accent focus:ring-accent"></textarea>
     </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="relative isolate bg-sky-700 text-white">
-    <div class="mx-auto max-w-7xl px-6 py-24 text-center">
-      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Ready to simplify your books?</h2>
-      <p class="mx-auto mt-4 max-w-2xl text-lg text-sky-100">
-        Schedule a free discovery call and we’ll map out a custom plan—no obligations.
-      </p>
-      <a href="#contact"
-         class="mt-8 inline-block rounded-xl bg-white/90 px-8 py-4 font-semibold text-sky-700 shadow hover:bg-white">
-        Get started →
-      </a>
-    </div>
-    <svg class="absolute inset-x-0 bottom-0 h-8 w-full text-slate-50" viewBox="0 0 1440 80"><path fill="currentColor" d="M0 0h1440v80H0z"/></svg>
-  </section>
+    <button type="submit"
+            class="w-full rounded-xl bg-brand px-4 py-3 font-semibold text-white shadow hover:bg-brand/90">
+      Send Message
+    </button>
+  </form>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="mx-auto max-w-lg px-6 py-24">
-    <h2 class="mb-6 text-center text-3xl font-bold tracking-tight text-slate-900">Contact us</h2>
-    <form action="https://formspree.io/f/your-id" method="POST" class="space-y-6">
-      <div>
-        <label for="name" class="block text-sm font-medium text-slate-700">Name</label>
-        <input id="name" name="name" type="text" required
-               class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:ring-sky-500 focus:border-sky-500">
-      </div>
-      <div>
-        <label for="email" class="block text-sm font-medium text-slate-700">Email</label>
-        <input id="email" name="email" type="email" required
-               class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:ring-sky-500 focus:border-sky-500">
-      </div>
-      <div>
-        <label for="message" class="block text-sm font-medium text-slate-700">How can we help?</label>
-        <textarea id="message" name="message" rows="4" required
-                  class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:ring-sky-500 focus:border-sky-500"></textarea>
-      </div>
-      <button type="submit"
-              class="w-full rounded-xl bg-sky-600 px-4 py-3 font-semibold text-white shadow hover:bg-sky-500">
-        Send Message
-      </button>
-    </form>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="border-t bg-slate-100">
-    <div class="mx-auto max-w-7xl px-6 py-12 flex flex-col items-center gap-4 text-sm text-slate-600 sm:flex-row sm:justify-between">
-      <p>&copy; 2025 Acme Accounting, Inc.</p>
-      <a href="https://github.com/your-org/your-repo" class="hover:text-sky-700">GitHub Repo</a>
-    </div>
-  </footer>
+<!-- ========== FOOTER ========== -->
+<footer class="border-t bg-paper">
+  <div class="mx-auto max-w-7xl flex flex-col items-center gap-4 px-6 py-10 text-sm text-brand/70 sm:flex-row sm:justify-between">
+    <p>&copy; 2025 Devolder Accounting. All rights reserved.</p>
+    <a href="https://github.com/your-org/your-repo" class="hover:text-accent">GitHub Repo</a>
+  </div>
+</footer>
 </body>
 </html>
