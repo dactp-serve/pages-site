@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Acme Accounting • Stress-Free Tax & Bookkeeping</title>
+
+  <!-- Tailwind CSS via CDN – swap for a build pipeline later -->
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+
+  <!-- OPT-IN: preload hero for first paint -->
+  <link rel="preload" as="image" href="assets/hero.jpg" imagesrcset="
+        assets/hero@640.jpg 640w,
+        assets/hero@1024.jpg 1024w,
+        assets/hero@1600.jpg 1600w" imagesizes="100vw">
+
+  <!-- Favicons -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body class="antialiased text-slate-800 bg-slate-50 [font-size:17px] leading-relaxed">
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8">
+      <a href="#" class="text-xl font-semibold tracking-tight text-sky-600">Acme Accounting</a>
+      <ul class="hidden gap-8 text-sm font-medium text-slate-700 lg:flex">
+        <li><a href="#services" class="hover:text-sky-600">Services</a></li>
+        <li><a href="#about" class="hover:text-sky-600">About</a></li>
+        <li><a href="#contact" class="hover:text-sky-600">Contact</a></li>
+      </ul>
+      <a href="#contact"
+         class="hidden rounded-xl bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 lg:block">
+        Free Consultation
+      </a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative isolate">
+    <img
+      src="assets/hero@1024.jpg"
+      srcset="assets/hero@640.jpg 640w, assets/hero@1024.jpg 1024w, assets/hero@1600.jpg 1600w"
+      sizes="100vw"
+      alt="Smiling accountant reviewing client finances"
+      width="1600" height="900"
+      class="absolute inset-0 h-full w-full object-cover"
+      loading="eager" />
+    <div class="relative mx-auto max-w-4xl px-6 py-32 text-center text-white">
+      <h1 class="mb-4 text-4xl font-extrabold sm:text-5xl lg:text-6xl drop-shadow-md">
+        Taxes Done Right—<wbr>Every Time
+      </h1>
+      <p class="mx-auto max-w-xl text-lg sm:text-xl">
+        Bookkeeping, payroll &amp; corporate returns handled by CPAs so you can focus on growing your business.
+      </p>
+      <a href="#contact"
+         class="mt-8 inline-block rounded-xl bg-white/90 px-6 py-3 text-base font-semibold text-sky-700 shadow hover:bg-white">
+        Book a 30-min Call →
+      </a>
+    </div>
+    <div class="pointer-events-none absolute inset-0 bg-sky-900/40"></div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="mx-auto max-w-7xl px-6 py-24">
+    <div class="mb-16 text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">What we do best</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-slate-600">
+        All plans include unlimited support — no surprise fees.
+      </p>
+    </div>
+
+    <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Feature -->
+      <div class="flex flex-col items-start">
+        <img src="assets/icon-bookkeeping.svg" alt="" width="64" height="64" class="mb-4" loading="lazy">
+        <h3 class="text-xl font-semibold text-slate-800">Bookkeeping</h3>
+        <p class="mt-2 text-slate-600">Monthly reconciliations, AR/AP tracking, and management reports.</p>
+      </div>
+
+      <div class="flex flex-col items-start">
+        <img src="assets/icon-tax.svg" alt="" width="64" height="64" class="mb-4" loading="lazy">
+        <h3 class="text-xl font-semibold text-slate-800">Corporate &amp; Personal Tax</h3>
+        <p class="mt-2 text-slate-600">T2, T1 &amp; sales-tax filings prepared and e-filed by licensed CPAs.</p>
+      </div>
+
+      <div class="flex flex-col items-start">
+        <img src="assets/icon-payroll.svg" alt="" width="64" height="64" class="mb-4" loading="lazy">
+        <h3 class="text-xl font-semibold text-slate-800">Full-Cycle Payroll</h3>
+        <p class="mt-2 text-slate-600">Direct-deposit, ROEs and T4s handled weekly, bi-weekly or monthly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="bg-white">
+    <div class="mx-auto max-w-7xl px-6 py-24 grid gap-12 lg:grid-cols-2">
+      <picture>
+        <img src="assets/team@640.jpg"
+             srcset="assets/team@640.jpg 640w, assets/team@1024.jpg 1024w"
+             sizes="(min-width:1024px) 50vw, 100vw"
+             alt="Acme Accounting team in the office"
+             width="1024" height="768"
+             class="rounded-3xl object-cover shadow-lg" loading="lazy">
+      </picture>
+      <article class="self-center">
+        <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Trusted by 500+ Canadian SMBs</h2>
+        <p class="mt-6 text-slate-600">
+          Headquartered in Toronto, our CPA-led firm has been guiding entrepreneurs for 15 years. We combine modern
+          cloud software (QuickBooks, Xero, Dext, Wagepoint) with human expertise, saving clients an average of 120
+          admin hours—and thousands in tax—every year.
+        </p>
+        <p class="mt-4 text-slate-600">
+          Whether you’re a solopreneur or scaling to Series A, we tailor processes around <em>your</em> workflow.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative isolate bg-sky-700 text-white">
+    <div class="mx-auto max-w-7xl px-6 py-24 text-center">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Ready to simplify your books?</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-sky-100">
+        Schedule a free discovery call and we’ll map out a custom plan—no obligations.
+      </p>
+      <a href="#contact"
+         class="mt-8 inline-block rounded-xl bg-white/90 px-8 py-4 font-semibold text-sky-700 shadow hover:bg-white">
+        Get started →
+      </a>
+    </div>
+    <svg class="absolute inset-x-0 bottom-0 h-8 w-full text-slate-50" viewBox="0 0 1440 80"><path fill="currentColor" d="M0 0h1440v80H0z"/></svg>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="mx-auto max-w-lg px-6 py-24">
+    <h2 class="mb-6 text-center text-3xl font-bold tracking-tight text-slate-900">Contact us</h2>
+    <form action="https://formspree.io/f/your-id" method="POST" class="space-y-6">
+      <div>
+        <label for="name" class="block text-sm font-medium text-slate-700">Name</label>
+        <input id="name" name="name" type="text" required
+               class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:ring-sky-500 focus:border-sky-500">
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium text-slate-700">Email</label>
+        <input id="email" name="email" type="email" required
+               class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:ring-sky-500 focus:border-sky-500">
+      </div>
+      <div>
+        <label for="message" class="block text-sm font-medium text-slate-700">How can we help?</label>
+        <textarea id="message" name="message" rows="4" required
+                  class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 shadow-sm focus:ring-sky-500 focus:border-sky-500"></textarea>
+      </div>
+      <button type="submit"
+              class="w-full rounded-xl bg-sky-600 px-4 py-3 font-semibold text-white shadow hover:bg-sky-500">
+        Send Message
+      </button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t bg-slate-100">
+    <div class="mx-auto max-w-7xl px-6 py-12 flex flex-col items-center gap-4 text-sm text-slate-600 sm:flex-row sm:justify-between">
+      <p>&copy; 2025 Acme Accounting, Inc.</p>
+      <a href="https://github.com/your-org/your-repo" class="hover:text-sky-700">GitHub Repo</a>
+    </div>
+  </footer>
+</body>
+</html>
